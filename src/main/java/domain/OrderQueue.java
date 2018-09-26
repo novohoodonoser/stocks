@@ -13,8 +13,8 @@ public class OrderQueue {
     public void addOrder(Operation operation) {
         Order order = operation.getOrder();
         if (checkOrder(order)) {
-            Queue<Operation> list = ordersMap.get(order);
-            list.add(operation);
+            Queue<Operation> queue = ordersMap.get(order);
+            queue.add(operation);
         } else {
             Queue<Operation> list = new LinkedList<>();
             list.add(operation);
@@ -27,9 +27,9 @@ public class OrderQueue {
     }
 
     public Operation pullOrder(Order order) {
-        Queue<Operation> list = ordersMap.get(order);
-        Operation result = list.remove();
-        if (list.isEmpty()) {
+        Queue<Operation> queue = ordersMap.get(order);
+        Operation result = queue.poll();
+        if (queue.isEmpty()) {
             ordersMap.remove(order);
         }
         return result;
