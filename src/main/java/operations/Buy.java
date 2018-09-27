@@ -6,7 +6,7 @@ import trade.Trade;
 
 import java.util.Map;
 
-public class Buy extends AbstractOperation  implements Operation {
+public class Buy extends AbstractOperation implements Operation {
 
     public Buy(String customerName, StockName stockName, int price, int quantity) {
         super(customerName, stockName, price, quantity);

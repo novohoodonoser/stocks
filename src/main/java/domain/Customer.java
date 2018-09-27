@@ -1,5 +1,7 @@
 package domain;
 
+import utils.StockConstants;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +13,10 @@ public class Customer {
     public Customer(String name, int balance, int aQuantity, int bQuantity, int cQuantity, int dQuantity) {
         this.name = name;
         this.balance = balance;
-        this.stocksMap.put(StockName.A,  aQuantity);
-        this.stocksMap.put(StockName.B,  bQuantity);
-        this.stocksMap.put(StockName.C,  cQuantity);
-        this.stocksMap.put(StockName.D,  dQuantity);
+        this.stocksMap.put(StockName.A, aQuantity);
+        this.stocksMap.put(StockName.B, bQuantity);
+        this.stocksMap.put(StockName.C, cQuantity);
+        this.stocksMap.put(StockName.D, dQuantity);
     }
 
     public Customer(String[] s) {
@@ -47,20 +49,13 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer [name=" + name + ", balance=" + balance + getCustomerStock() + "]";
-    }
-
-    private String getCustomerStock() {
-        String answer = "";
-        answer += getStockDump(StockName.A);
-        answer += getStockDump(StockName.B);
-        answer += getStockDump(StockName.C);
-        answer += getStockDump(StockName.D);
-        return answer;
-    }
-
-    private String getStockDump(StockName StockName) {
-        return " , " + StockName + " = " + stocksMap.get(StockName);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(name + StockConstants.DELIMITER + balance + StockConstants.DELIMITER);
+        for (StockName stockName : StockName.values()) {
+            stringBuilder.append(stocksMap.get(stockName));
+            stringBuilder.append(StockConstants.DELIMITER);
+        }
+        return stringBuilder.toString();
     }
 }
 

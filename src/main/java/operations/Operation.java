@@ -8,7 +8,9 @@ import java.util.Map;
 
 public interface Operation {
 
-    void apply (Map<String, Customer> customers);
+    void apply(Map<String, Customer> customers);
+
     void addToQueue(Trade trade);
+
     Order getOrder();
 }

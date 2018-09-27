@@ -1,8 +1,7 @@
+package operations;
+
 import domain.Customer;
 import domain.StockName;
-import operations.Buy;
-import operations.Operation;
-import operations.Sell;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 
-public class TestOperations {
+public class OperationsTest {
     Map<String, Customer> customers = new HashMap<>();
     Customer customer;
 

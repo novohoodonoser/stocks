@@ -19,22 +19,20 @@ public class TradeImpl implements Trade {
 
     @Override
     public void buy(Buy operation) {
-        if(sellQueue.checkOrder(operation.getOrder())) {
+        if (sellQueue.checkOrder(operation.getOrder())) {
             operation.apply(customers);
             sellQueue.pullOrder(operation.getOrder()).apply(customers);
-        }
-        else {
+        } else {
             buyQueue.addOrder(operation);
         }
     }
 
     @Override
     public void sell(Sell operation) {
-        if(buyQueue.checkOrder(operation.getOrder())) {
+        if (buyQueue.checkOrder(operation.getOrder())) {
             operation.apply(customers);
             buyQueue.pullOrder(operation.getOrder()).apply(customers);
-        }
-        else {
+        } else {
             sellQueue.addOrder(operation);
         }
     }

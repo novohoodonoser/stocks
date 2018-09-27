@@ -1,19 +1,18 @@
+package trade;
+
 import domain.Customer;
 import domain.StockName;
 import operations.Buy;
-import operations.Operation;
 import operations.Sell;
 import org.junit.Before;
 import org.junit.Test;
-import trade.Trade;
-import trade.TradeImpl;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestOrders {
+public class TestTrade {
 
     Map<String, Customer> customers = new HashMap<>();
     Buy buy;

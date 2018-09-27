@@ -27,9 +27,9 @@ public class Order {
     @Override
     public String toString() {
         return new StringBuilder().
-                append("stockName = ").append( stockName).
-                append("price = ").append( price).
-                append("quantity = ").append( quantity).
+                append("stockName = ").append(stockName).
+                append("price = ").append(price).
+                append("quantity = ").append(quantity).
                 toString();
     }
 

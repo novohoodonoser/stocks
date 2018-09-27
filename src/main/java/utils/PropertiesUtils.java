@@ -7,8 +7,9 @@ import java.util.Properties;
 public class PropertiesUtils {
     public static Properties readProperties(String appConfigPath) throws IOException {
         Properties appProps = new Properties();
-        appProps.load(new FileInputStream(appConfigPath));
+        try (FileInputStream fileInputStream = new FileInputStream(appConfigPath)) {
+            appProps.load(fileInputStream);
+        }
         return appProps;
     }
-
 }

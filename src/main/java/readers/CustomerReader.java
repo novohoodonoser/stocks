@@ -1,6 +1,7 @@
 package readers;
 
 import domain.Customer;
+import utils.StockConstants;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,7 +22,7 @@ public class CustomerReader {
         Map<String, Customer> customers = new HashMap<>();
         try (Stream<String> stream = Files.lines(Paths.get(customersFileName))) {
             stream.forEach(data -> {
-                String[] parsedData = data.split("\t");
+                String[] parsedData = data.split(StockConstants.DELIMITER);
                 customers.put(parsedData[0], new Customer(parsedData[0], Integer.valueOf(parsedData[1]), Integer.valueOf(parsedData[2]),
                         Integer.valueOf(parsedData[3]), Integer.valueOf(parsedData[4]), Integer.valueOf(parsedData[5])));
             });

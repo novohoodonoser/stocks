@@ -19,7 +19,7 @@ public class CustomerWriter {
         StringBuffer stringBuffer = new StringBuffer();
         for (Map.Entry<String, Customer> customer : customers.entrySet()) {
             stringBuffer.append(customer.getValue().toString());
-            stringBuffer.append("\r\n");
+            stringBuffer.append(System.lineSeparator());
         }
         return stringBuffer;
     }

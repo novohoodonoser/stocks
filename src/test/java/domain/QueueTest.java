@@ -1,15 +1,16 @@
-import domain.Order;
-import domain.OrderQueue;
-import domain.StockName;
-import junit.framework.TestCase;
+package domain;
+
 import operations.Buy;
 import operations.Operation;
 import operations.Sell;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-public class TestQueue extends TestCase {
+
+public class QueueTest {
 
     Operation sell;
     Operation buy;
