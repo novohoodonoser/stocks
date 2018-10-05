@@ -2,7 +2,7 @@ package operations;
 
 import domain.Customer;
 import domain.StockName;
-import trade.Trade;
+import trade.Exchange;
 
 import java.util.Map;
 
@@ -18,8 +18,8 @@ public class Sell extends AbstractOperation implements Operation {
     }
 
     @Override
-    public void addToQueue(Trade trade) {
-        trade.sell(this);
+    public void addToQueue(Exchange exchange) {
+        exchange.sell(this);
     }
 
 }

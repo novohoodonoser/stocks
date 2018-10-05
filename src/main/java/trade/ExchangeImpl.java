@@ -7,13 +7,13 @@ import operations.Sell;
 
 import java.util.Map;
 
-public class TradeImpl implements Trade {
+public class ExchangeImpl implements Exchange {
 
     private final Map<String, Customer> customers;
     private OrderQueue sellQueue = new OrderQueue();
     private OrderQueue buyQueue = new OrderQueue();
 
-    public TradeImpl(Map<String, Customer> customers) {
+    public ExchangeImpl(Map<String, Customer> customers) {
         this.customers = customers;
     }
 

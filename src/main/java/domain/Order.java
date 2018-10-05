@@ -26,10 +26,10 @@ public class Order {
 
     @Override
     public String toString() {
-        return new StringBuilder().
-                append("stockName = ").append(stockName).
-                append("price = ").append(price).
-                append("quantity = ").append(quantity).
+        return new StringBuilder()
+                + "stockName = " + stockName
+                + "price = " + price
+                + "quantity = " + quantity.
                 toString();
     }
 

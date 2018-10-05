@@ -1,6 +1,6 @@
 package readers;
 
-import trade.Trade;
+import trade.Exchange;
 import operations.OperationFactory;
 
 import java.io.IOException;
@@ -17,9 +17,9 @@ public class OrderReader {
         ordersFileName = fileName;
     }
 
-    public void read(Trade trade) throws IOException {
+    public void read(Exchange exchange) throws IOException {
         try (Stream<String> stream = Files.lines(Paths.get(ordersFileName))) {
-            stream.forEach(data -> operationFactory.get(data).addToQueue(trade));
+            stream.forEach(data -> operationFactory.get(data).addToQueue(exchange));
         }
     }
 }

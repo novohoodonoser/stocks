@@ -11,11 +11,11 @@ public class OperationFactory {
 
         switch (s[1]) {
             case "s":
-                return new Sell(s[0], StockName.getStockName(s[2]), Integer.valueOf(s[3]), Integer.valueOf(s[4]));
+                return new Sell(s[0], StockName.valueOf(s[2].toUpperCase()), Integer.valueOf(s[3]), Integer.valueOf(s[4]));
             case "b":
-                return new Buy(s[0], StockName.getStockName(s[2]), Integer.valueOf(s[3]), Integer.valueOf(s[4]));
+                return new Buy(s[0], StockName.valueOf(s[2].toUpperCase()), Integer.valueOf(s[3]), Integer.valueOf(s[4]));
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Received unknown operation");
         }
     }
 }
